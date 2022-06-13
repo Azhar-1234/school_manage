@@ -53,22 +53,17 @@ class AssignSubjectController extends Controller
 
       // return $request->subject_id;
 
-
         if ($request->subject_id == NULL) {
           return redirect()->back()->with('danger','sorry! you dont select any item');
         }
         else{
                 
            AssignSubject::whereNotIn('subject_id',$request->subject_id)->where('class_id',$request->$class_id)->delete();
-
-              foreach ($request->subject_id as $key => $value) {
-                $assign_subject_exist = AssignSubject::where('subject_id',$value)->where('class_id',$request->class_id)->first();
-
-              }
-
-              
-                 if($assign_subject_exist){
-                $assignSubjects = $assign_subject_exist;
+            foreach ($request->subject_id as $key => $value) {
+               $assign_subject_exist = AssignSubject::where('subject_id',$value)->where('class_id',$request->class_id)->first();
+            }
+           if($assign_subject_exist){
+               $assignSubjects = $assign_subject_exist;
 
               }else{
                 $assignSubjects = new AssignSubject(); 
@@ -78,7 +73,6 @@ class AssignSubjectController extends Controller
                 $assignSubjects->full_mark = $request->full_mark[$key];
                 $assignSubjects->pass_mark = $request->pass_mark[$key];
                 $assignSubjects->subjective_mark = $request->subjective_mark[$key];
-                // $assignSubjects->updated_by = Auth::user()->id;
                 $result = $assignSubjects->save(); 
 
           }

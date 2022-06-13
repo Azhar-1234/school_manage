@@ -37,7 +37,6 @@ class ExamFeeController extends Controller
         }
         $allStudent = AssignStudent::with(['discount'])->where($where)->get();
       
-
         $html['thsource'] = '<th>SL</th>';
         $html['thsource'] .= '<th>ID NO </th>';
         $html['thsource'] .= '<th>Student Name</th>';

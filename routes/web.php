@@ -26,6 +26,15 @@ use App\Http\Controllers\BackEnd\Employee\EmployeeAttendController;
 use App\Http\Controllers\BackEnd\Employee\EmployeeMonthlySalary;
 use App\Http\Controllers\BackEnd\Student\Marks\MarksController;
 use App\Http\Controllers\BackEnd\DefaultController;
+use App\Http\Controllers\BackEnd\Student\GradeController;
+use App\Http\Controllers\BackEnd\Student\AccountsFeeController;
+use App\Http\Controllers\BackEnd\Employee\SalaryController;
+use App\Http\Controllers\BackEnd\OtherCostController;
+use App\Http\Controllers\BackEnd\ProfitController;
+use App\Http\Controllers\BackEnd\MarkSheetController;
+use App\Http\Controllers\BackEnd\AttendanceReportController;
+
+
 
 
 
@@ -195,6 +204,50 @@ Route::get('details-monthly-salary/{id}',[EmployeeMonthlySalary::class,'details'
 //Student Marks Entry
 Route::get('add-marks',[MarksController::class,'add'])->name('add-marks');
 Route::post('store-marks',[MarksController::class,'store'])->name('store-marks');
+Route::get('edit-marks',[MarksController::class,'edit'])->name('edit-marks');
+Route::get('get-student-marks',[MarksController::class,'getMarks'])->name('get-student-marks');
+Route::post('update-marks',[MarksController::class,'update'])->name('update-marks');
+
+//grade point
+Route::get('view-marks-grade',[GradeController::class,'view'])->name('view-marks-grade');
+Route::get('add-marks-grade',[GradeController::class,'add'])->name('add-marks-grade');
+Route::post('store-marks-grade',[GradeController::class,'store'])->name('store-marks-grade');
+Route::get('edit-marks-grade/{id}',[GradeController::class,'edit'])->name('edit-marks-grade');
+Route::post('update-marks-grade/{id}',[GradeController::class,'update'])->name('update-marks-grade');
+
+//Student Accounts
+Route::get('Accounts-fee-view',[AccountsFeeController::class,'view'])->name('Accounts-fee-view');
+Route::get('Accounts-fee-add',[AccountsFeeController::class,'add'])->name('Accounts-fee-add');
+Route::post('Accounts-fee-store',[AccountsFeeController::class,'store'])->name('Accounts-fee-store');
+Route::get('get-student',[AccountsFeeController::class,'getStudent'])->name('get-student');
+
+//Employee Salary
+Route::get('Accounts-employee-view',[SalaryController::class,'view'])->name('Accounts-employee-view');
+Route::get('Accounts-employee-add',[SalaryController::class,'add'])->name('Accounts-employee-add');
+Route::post('Accounts-employee-store',[SalaryController::class,'store'])->name('Accounts-employee-store');
+Route::get('get-employee',[SalaryController::class,'getEmployee'])->name('get-employee');
+//other cost
+Route::get('other-cost-view',[OtherCostController::class,'view'])->name('other-cost-view');
+Route::get('other-cost-add',[OtherCostController::class,'add'])->name('other-cost-add');
+Route::post('other-cost-store',[OtherCostController::class,'store'])->name('other-cost-store');
+Route::get('other-cost-edit/{id}',[OtherCostController::class,'edit'])->name('other-cost-edit');
+Route::post('other-cost-update/{id}',[OtherCostController::class,'update'])->name('other-cost-update');
+//Profit 
+Route::get('profit-view',[ProfitController::class,'view'])->name('profit-view');
+Route::get('profit-get',[ProfitController::class,'getProfit'])->name('profit-get');
+Route::get('profit-pdf',[ProfitController::class,'ProfitPayslip'])->name('profit-pdf');
+
+//marksheet
+Route::get('marksheet-view',[MarkSheetController::class,'view'])->name('marksheet-view');
+Route::get('marksheet-get',[MarkSheetController::class,'marksheetGet'])->name('marksheet-get');
+//marksheet
+Route::get('attendance-report',[AttendanceReportController::class,'view'])->name('attendance-report');
+Route::get('attendance-get',[AttendanceReportController::class,'attendanceGet'])->name('attendance-get');
+
+//result
+Route::get('result-view',[MarkSheetController::class,'viewResult'])->name('result-view');
+Route::get('result-get',[MarkSheetController::class,'resultGet'])->name('result-get');
+
 
 //default controller
 Route::get('student-get-student',[DefaultController::class,'getStudent'])->name('student-get-student');

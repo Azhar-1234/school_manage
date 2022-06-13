@@ -1,5 +1,4 @@
 @extends('backend.master')
-
 @section('mainContent')
 <div class="card col-md-8 m-3 pt-3">
     <div class="card-header">
@@ -8,7 +7,6 @@
         @else
         <strong>Add</strong> Assign subject
         @endif
-
         <a href="{{route('view-assign-subject')}}"  type="button" class="btn btn-primary float-right active col-md-4">
           <i class="fa fa-list"></i>  Assign Subject List
       	 </a>

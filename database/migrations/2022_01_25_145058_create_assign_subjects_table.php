@@ -21,6 +21,7 @@ class CreateAssignSubjectsTable extends Migration
             $table->double('pass_mark');
             $table->double('subjective_mark');
             $table->string('updated_by')->nullable();
+            $table->integer('created_by')->nullable();
             $table->timestamps();
         });
     }

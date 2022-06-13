@@ -21,8 +21,8 @@ class UserController extends Controller
         $user->usertype = 'admin';
         $user->role = $request->role;
        	$user->name = $request->name;
-    	$user->email = $request->email;
-    	$user->password = bcrypt($code);
+    	  $user->email = $request->email;
+    	  $user->password = bcrypt($code);
         $user->code = $code;
       	$result= $user->save();
         if($result):

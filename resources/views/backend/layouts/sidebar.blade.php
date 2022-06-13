@@ -60,9 +60,29 @@
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="menu-icon fa fa-table"></i>Mange Marks</a> 
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="fa fa-circle"></i><a href="{{route('add-marks')}}">marks entry</a></li>
+                        <li><i class="fa fa-circle"></i><a href="{{route('add-marks')}}">Marks Entry</a></li>
+                        <li><i class="fa fa-circle"></i><a href="{{route('edit-marks')}}">Edit Marks</a></li>
+                        <li><i class="fa fa-circle"></i><a href="{{route('view-marks-grade')}}">Grade Point</a></li>
+                        <li><i class="fa fa-circle"></i><a href="{{route('result-view')}}">Result</a></li>
                     </ul>
                  </li>               
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="menu-icon fa fa-table"></i>Accounts Managment</a> 
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="fa fa-circle"></i><a href="{{route('Accounts-fee-view')}}">Students Fee</a></li>
+                        <li><i class="fa fa-circle"></i><a href="{{route('Accounts-employee-view')}}">Employee Mangment</a></li>
+                        <li><i class="fa fa-circle"></i><a href="{{route('other-cost-view')}}">Other Cost</a></li>
+                     </ul>
+                 </li>            
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="menu-icon fa fa-table"></i>Report Managment</a> 
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="fa fa-circle"></i><a href="{{route('profit-view')}}">Monthly Profit</a></li>
+                        <li><i class="fa fa-circle"></i><a href="{{route('marksheet-view')}}">Marksheet Mangment</a></li>
+                        <li><i class="fa fa-circle"></i><a href="{{route('attendance-report')}}">Attendance Report</a></li>
+                     </ul>
+                 </li>
+
             </ul>
         </div><!-- /.navbar-collapse -->
     </nav>
